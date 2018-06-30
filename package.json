@@ -15,10 +15,12 @@
         "onCommand:extension.openPrewiew"
     ],
     "contributes": {
-        "commands": [{
-            "command": "extension.openPrewiew",
-            "title": "prewiew"
-        }]
+        "commands": [
+            {
+                "command": "extension.openPrewiew",
+                "title": "prewiew"
+            }
+        ]
     },
     "main": "./out/extension",
     "scripts": {
