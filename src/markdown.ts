@@ -7,7 +7,15 @@ export class MarkDown {
         this._context = context
     }
 
+    //更新markdown
     public updateMarkdown() {
+        if (this._currentPanel) {
+            this._currentPanel.webview.html = this._getWebviewContent();
+        }
+    }
+
+    //创建markdown
+    public createMarkdown() {
         if (this._currentPanel) {
             this._currentPanel.webview.html = this._getWebviewContent();
         } else {

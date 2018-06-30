@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     let prewiew = vscode.commands.registerCommand('extension.openPrewiew', () => {
         vscode.window.showInformationMessage('预览模式已打开');
-        markDown.updateMarkdown();
+        markDown.createMarkdown();
     });
 
     let wordCounter = new WordCounter();
