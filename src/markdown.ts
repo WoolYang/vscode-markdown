@@ -1,4 +1,6 @@
 import * as vscode from 'vscode';
+import * as MarkdownIt from 'markdown-it'
+
 export class MarkDown {
     private _currentPanel: vscode.WebviewPanel | undefined = undefined;
     private _context: vscode.ExtensionContext | undefined = undefined
@@ -42,6 +44,9 @@ export class MarkDown {
             return '';
         }
         let docContent = editor.document.getText();
+        let md: MarkdownIt.MarkdownIt | null = new MarkdownIt();
+        let markDownContent = md.render(docContent);
+        md = null;
         return `<!DOCTYPE html>
             <html lang="en">
             <head>
@@ -50,7 +55,7 @@ export class MarkDown {
                 <title>Prewiew</title>
             </head>
             <body>
-                ${docContent}
+                ${markDownContent}
             </body>
             </html>`;
     }
